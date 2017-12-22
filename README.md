@@ -1,4 +1,4 @@
-# k8s-jenkins
+# sample-k8s-jenkins
 
 A sample configuration for Jenkins on Kubernetes.
 
