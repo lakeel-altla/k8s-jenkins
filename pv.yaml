@@ -10,5 +10,5 @@ spec:
   capacity:
     storage: 10Gi
   hostPath:
-    path: /var/jenkins_home
+    path: /data/jenkins_home
     type: DirectoryOrCreate
