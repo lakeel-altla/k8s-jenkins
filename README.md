@@ -43,7 +43,7 @@ minikube ssh
 Cat `initialAdminPassword`:
 
 ```
-sudo cat /var/jenkins_home/secrets/initialAdminPassword
+sudo cat /data/jenkins_home/secrets/initialAdminPassword
 ```
 
 and copy its result.
