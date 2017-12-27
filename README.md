@@ -1,6 +1,6 @@
 # sample-k8s-jenkins
 
-A sample configuration for Jenkins on Kubernetes.
+A sample configuration for Jenkins on Kubernetes. This sample is tested on Minikube for Mac.
 
 ## Usage
 
@@ -28,24 +28,24 @@ kubectl create -f statefulset.yaml
 kubectl create -f service-agent.yaml
 ```
 
-Open Jenkins UI after a pod for Jenkins launched:
+Create a pod getting the initial admin password to unlock Jenkins after the statefulset launched:
+
+```
+kubectl create -f initial-admin-password.yaml
+```
+
+Get the initial admin password:
+
+```
+kubectl --namespace=jenkins logs initial-admin-password
+```
+
+and copy its result.
+
+Open Jenkins UI with Minikube:
 
 ```
 minikube service -n=jenkins jenkins
 ```
 
-SSH to minikube:
-
-```
-minikube ssh
-```
-
-Cat `initialAdminPassword`:
-
-```
-sudo cat /data/jenkins_home/secrets/initialAdminPassword
-```
-
-and copy its result.
-
-Paste the value of `initialAdminPassword` into the unlock Jenkins page on Jenkins UI.
+Paste the initial admin password into the unlock page.

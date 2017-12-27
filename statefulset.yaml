@@ -50,13 +50,7 @@ spec:
           requests:
             cpu: 0.5
             memory: 500Mi
-  volumeClaimTemplates:
-  - metadata:
-      name: jenkins-home
-    spec:
-      storageClassName: jenkins-storage
-      accessModes:
-        - ReadWriteOnce
-      resources:
-        requests:
-          storage: 10Gi
+      volumes:
+      - name: jenkins-home
+        persistentVolumeClaim:
+          claimName: jenkins-home
